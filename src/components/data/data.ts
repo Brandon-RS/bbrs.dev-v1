@@ -57,41 +57,56 @@ const skills: SkillType[] = [
   },
 ]
 
+const projectBaseUrl = 'https://github.com/Brandon-RS/'
+
 const projects: ProjectType[] = [
   {
     id: '1',
-    name: 'Movies',
+    name: 'Brandon.dev',
     year: '2021',
-    desc: 'An application to see movies info in listings',
-    tags: ['Flutter', 'TheMovieDB']
+    desc: 'Personal portfolio. *This website',
+    tags: ['Vue', 'Vuex', 'Router'],
+    link: `${projectBaseUrl}brandon.dev`
   },
   {
     id: '2',
-    name: 'WhatsApp UI Clone',
+    name: 'Movies',
     year: '2021',
-    desc: 'User Interface clone of WhatsApp',
-    tags: ['Flutter', 'Dart']
+    desc: 'An application to see movies info in listings',
+    tags: ['Flutter', 'TheMovieDB'],
+    link: `${projectBaseUrl}Movies`
   },
   {
     id: '3',
     name: 'MapBox GL in Flutter',
     year: '2022',
     desc: 'Geolocation using MapBox and Google Maps API',
-    tags: ['Flutter', 'MapBox']
+    tags: ['Flutter', 'MapBox'],
+    link: `${projectBaseUrl}MapBox-GL-flutter`
   },
   {
     id: '4',
     name: 'API Rest with Node',
     year: '2022',
     desc: 'Rest API with node.js, JWT and MongoDB',
-    tags: ['Node.js', 'JWT', 'MongoDB']
+    tags: ['Node.js', 'JWT', 'MongoDB'],
+    link: `${projectBaseUrl}NodeApi`
   },
   {
     id: '5',
+    name: 'GruvBox GNOME Theme',
+    year: '2021',
+    desc: 'Linux theme for GNOME based environments',
+    tags: ['API-Rest', 'OpenWeather'],
+    link: `${projectBaseUrl}Gruvbox-Darck-Theme`
+  },
+  {
+    id: '6',
     name: 'Weather App',
     year: '2021',
     desc: 'Weather app using OpenWeather API',
-    tags: ['API-Rest', 'OpenWeather']
+    tags: ['API-Rest', 'OpenWeather'],
+    link: `${projectBaseUrl}Weather-app`
   },
 ]
 

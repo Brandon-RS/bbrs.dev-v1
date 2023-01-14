@@ -10,5 +10,6 @@ export interface ProjectType {
   name: string,
   year: string,
   desc: string,
-  tags: string[]
+  tags: string[],
+  link: string
 }

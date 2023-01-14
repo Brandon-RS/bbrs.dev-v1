@@ -9,11 +9,11 @@
 
 <script lang="ts" setup>
 
-import HomeBanner from '@/components/home/HomeBanner.vue'
-import HomeSkills from '@/components/home/HomeSkills.vue'
-import HomeProjects from '@/components/home/HomeProjects.vue'
+import HomeBanner from '@/components/home/BannerHome.vue'
+import HomeSkills from '@/components/home/SkillsHome.vue'
+import HomeProjects from '@/components/home/ProjectsHome.vue'
+import HomeContact from '@/components/home/ContactHome.vue'
 import { projects, skills } from '@/components/data/data'
-import HomeContact from '@/components/home/HomeContact.vue'
 
 </script>
 

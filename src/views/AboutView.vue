@@ -8,13 +8,5 @@
 </script>
 
 <style lang="scss" scoped>
-.about-container {
-  width: 1200px;
-}
 
-@media screen and (max-width: 1300px) {
-  .about-container {
-    width: 90vw;
-  }
-}
 </style>

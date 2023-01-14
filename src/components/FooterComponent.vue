@@ -33,7 +33,7 @@
 
 .footer-container {
   margin-top: 60px;
-  font-size: 15px;
+  font-size: 14px;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -53,7 +53,7 @@
     font-weight: 600;
 
     .gen-icon {
-      font-size: 20px;
+      font-size: 17px;
       margin-left: 5px;
     }
 

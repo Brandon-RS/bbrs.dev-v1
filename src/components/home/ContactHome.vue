@@ -2,7 +2,7 @@
   <div class="contact-container">
     <h2 class="second-title">Talk to me!</h2>
     <p>If you are interested in creating technological products and need help, text me:</p>
-    <span>Send a Message</span>
+    <router-link class="contact-button" :to="{ name: 'contact' }">Send a Message</router-link>
   </div>
 </template>
 
@@ -16,10 +16,10 @@
 
   p {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 16px;
   }
 
-  span {
+  .contact-button {
     display: inline-block;
     margin-top: 30px;
     padding: 15px 50px;
@@ -27,9 +27,10 @@
     color: #5eddac;
     border-radius: 22px;
     box-shadow: 0 0 0 1px #3d3d3d;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 2px;
     cursor: pointer;
+    text-decoration: none;
 
     &:hover {
       box-shadow: 0 0 0 1px #5eddac;

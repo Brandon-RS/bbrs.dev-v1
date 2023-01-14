@@ -50,11 +50,13 @@ const allSkills = computed(() => {
       div {
         .from {
           color: rgb(170, 170, 170);
+          font-size: 14px;
           margin-bottom: 10px;
+          font-weight: 400;
         }
         .name {
           font-weight: 600;
-          font-size: 18px;
+          font-size: 16px;
         }
       }
     }

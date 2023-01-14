@@ -4,7 +4,10 @@
 
     <div class="projects-cards generic-card-grid">
       <div class="card" v-for="pr in projects" :key="pr.id">
-        <span class="card-year">{{ pr.year }}</span>
+        <div class="card-top">
+          <span class="card-year">{{ pr.year }}</span>
+          <a :href="pr.link" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+        </div>
         <h3>{{ pr.name }}</h3>
         <p>{{ pr.desc }}</p>
         <div class="card-tags">
@@ -13,7 +16,13 @@
       </div>
     </div>
 
-    <p class="pr-footer">You can see all my public projects on GitHub</p>
+    <p class="pr-footer">
+      You can see all my public projects on
+      <a href="https://github.com/Brandon-RS?tab=repositories" target="_blank">
+        GitHub
+        <i class="fa-solid fa-up-right-from-square"></i>
+      </a>
+    </p>
   </div>
 </template>
 
@@ -35,6 +44,17 @@ defineProps<{ projects: ProjectType[] }>()
       border: 2px solid rgb(45, 45, 45);
       border-radius: 10px;
 
+      .card-top {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          text-decoration: none;
+          color: #af0e99;
+          margin-right: 20px;
+        }
+      }
+
       .card-year {
         color: #af0e99;
       }
@@ -42,10 +62,11 @@ defineProps<{ projects: ProjectType[] }>()
       h3 {
         letter-spacing: 1px;
         margin: 10px 0 15px 0;
+        font-size: 18px;
       }
 
       p {
-        font-size: 16px;
+        font-size: 14px;
         letter-spacing: .5px;
         margin-bottom: 20px;
       }
@@ -66,7 +87,15 @@ defineProps<{ projects: ProjectType[] }>()
 
   .pr-footer {
     margin-top: 30px;
-    font-size: 18px;
+    font-size: 16px;
+
+    a {
+      text-decoration: none;
+      color: #af0e99;
+      i{
+        font-size: 12px;
+      }
+    }
   }
 }
 </style>

@@ -5,9 +5,9 @@
         <img src="@/assets/images/icon-head.png" alt="home">
       </router-link>
       <router-link class="nav-link" :to="{ name: 'about' }"><span>About</span></router-link>
-      <router-link class="nav-link" :to="{ name: 'blog' }"><span>Blog</span></router-link>
       <router-link class="nav-link" :to="{ name: 'projects' }"><span>Projects</span></router-link>
-      <a class="nav-link" href="https://github.com/Brandon-RS" target="_blank">
+      <router-link class="nav-link" :to="{ name: 'contact' }"><span>Contact</span></router-link>
+      <a class="nav-link" href="https://github.com/Brandon-RS/brandon.dev" target="_blank">
         <span>GitHub</span>
         <i class="fa-solid fa-up-right-from-square"></i>
       </a>
@@ -37,7 +37,7 @@
   .nav-link {
     color: rgb(181, 181, 181);
     margin-right: 40px;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
 
     &:hover {
@@ -46,7 +46,7 @@
     }
 
     i{
-      font-size: 13px;
+      font-size: 11px;
       padding-left: 5px;
     }
   }

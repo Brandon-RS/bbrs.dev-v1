@@ -31,7 +31,7 @@ const imageUrl = (pic: string) => require('../assets/images/' + pic)
   }
 
   .logo-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     padding-top: 10px;
   }
