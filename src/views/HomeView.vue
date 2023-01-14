@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="main-home">
+    <HomeBanner name="Brandon" />
+    <HomeSkills :skills="skills" />
+    <HomeProjects :projects="projects" />
+    <HomeContact />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+<script lang="ts" setup>
 
-export default defineComponent({
-  name: 'HomeView',
-  components: {
-    HelloWorld,
-  },
-});
+import HomeBanner from '@/components/home/HomeBanner.vue'
+import HomeSkills from '@/components/home/HomeSkills.vue'
+import HomeProjects from '@/components/home/HomeProjects.vue'
+import { projects, skills } from '@/components/data/data'
+import HomeContact from '@/components/home/HomeContact.vue'
+
 </script>
+
+<style lang="scss" scoped>
+
+</style>
