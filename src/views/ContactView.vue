@@ -35,7 +35,7 @@
               type="text"
               placeholder="Write your name"
               name="user_name"
-              :value="inputReset"
+              v-model="name"
               required>
           </div>
 
@@ -67,21 +67,36 @@
         </form>
       </div>
     </div>
-
-    <div :class="sent ? 'send-message' : 'send-hide'">
-      <span>Email sent <img src="@/assets/images/mail.png" alt="email"></span>
-    </div>
   </div>
+
+  <!-- Modal -->
+  <modal-contact
+    :name="name ?? 'None'"
+    v-if="isOpen"
+    @on:close="() => isOpen = false">
+    <template v-slot:header>
+      <img class="modal-image" src="@/assets/images/mail.png" alt="email sent">
+    </template>
+    <template v-slot:main="{ userName }">
+      <span class="modal-main">Thanks {{ userName }}, talk to you soon!</span>
+    </template>
+    <template v-slot:footer>
+      <button @click="() => isOpen = false" class="close-modal">Close</button>
+    </template>
+  </modal-contact>
+
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import emailjs from '@emailjs/browser'
+import ModalContact from '@/components/Contact/ModalContact.vue'
 
 const form = ref('')
 const inputReset = ref('')
+const name = ref('')
 const sending = ref(false)
-const sent = ref(false)
+const isOpen = ref(false)
 
 const sendEmail = () => {
   sending.value = true
@@ -92,10 +107,10 @@ const sendEmail = () => {
     'n5A7QePYCgc74Qul3'
   )
     .then(() => {
-      inputReset.value = ' '
+      inputReset.value = ''
       sending.value = false
-      sent.value = true
-      setTimeout(() => sent.value = false, 1000)
+      isOpen.value = true
+      setTimeout(() => name.value = '', 100)
     })
 }
 
@@ -230,35 +245,29 @@ const sendEmail = () => {
       }
     }
   }
+}
 
-  .send-message {
-    background-color: #252525;
-    border-radius: 16px;
-    border: none;
-    box-shadow: 0 0 0 4px #3d3d3d;
-    color: #5eddac;
-    cursor: pointer;
-    font-size: 16px;
-    letter-spacing: 2px;
-    margin-top: 30px;
-    padding: 15px 80px;
-    position: fixed;
-    text-decoration: none;
-    font-size: 18px;
-    left: calc(50% - 162px);
-    top: calc(50% - 30px);
+.close-modal {
+  box-shadow: 0 0 0 1px #3d3d3d;
+  background-color: $background-color;
+  border-radius: 16px;
+  border: none;
+  color: #5eddac;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 6px 40px;
+}
 
-    span {
-      display: flexbox;
+.modal-image {
+  width: 120px;
+}
 
-      img {
-        margin-left: 20px;
-      }
-    }
-  }
-
-  .send-hide {
-    display: none;
-  }
+.modal-main {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
 }
 </style>

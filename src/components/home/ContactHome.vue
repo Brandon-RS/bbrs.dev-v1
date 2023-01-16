@@ -39,9 +39,9 @@
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .contact-container {
-    span {
+    .contact-button {
       width: 100%;
       text-align: center;
     }
