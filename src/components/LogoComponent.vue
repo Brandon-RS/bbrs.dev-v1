@@ -1,21 +1,14 @@
+<script lang="ts" setup>
+</script>
+
 <template>
   <div class="logo-container">
-    <img :src="imageUrl(props.icon)" :alt="props.name">
-    <router-link class="home-link" :to="{ name: 'home' } ">
-      <span class="logo-title">{{ props.name }}</span>
+    <img src="@/assets/images/icon-head.png" alt="Brandon Rojas">
+    <router-link class="home-link" :to="{ name: 'home' }">
+      <span class="logo-title">Brandon Rojas</span>
     </router-link>
   </div>
 </template>
-
-<script lang="ts" setup>
-const props = defineProps({
-  icon: { type: String, required: true, },
-  name: { type: String, required: true, }
-})
-
-const imageUrl = (pic: string) => require('../assets/images/' + pic)
-
-</script>
 
 <style lang="scss" scoped>
 @import '../assets/styles/colors.scss';

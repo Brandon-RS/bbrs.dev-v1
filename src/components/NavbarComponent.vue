@@ -1,3 +1,7 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
   <div class="navbar-container">
     <nav class="navbar">
@@ -7,7 +11,11 @@
       <router-link class="nav-link" :to="{ name: 'about' }"><span>About</span></router-link>
       <router-link class="nav-link" :to="{ name: 'projects' }"><span>Projects</span></router-link>
       <router-link class="nav-link" :to="{ name: 'contact' }"><span>Contact</span></router-link>
-      <a class="nav-link" href="https://github.com/Brandon-RS/brandon.dev" target="_blank">
+      <a
+        class="nav-link"
+        href="https://github.com/Brandon-RS"
+        target="_blank"
+        rel="noreferrer">
         <span>GitHub</span>
         <i class="fa-solid fa-up-right-from-square"></i>
       </a>
@@ -15,10 +23,6 @@
   </div>
 
 </template>
-
-<script lang="ts" setup>
-
-</script>
 
 <style lang="scss" scoped>
 @import '../assets/styles/colors.scss';
@@ -45,7 +49,7 @@
       border-bottom: 3px solid rgb(37, 255, 63);
     }
 
-    i{
+    i {
       font-size: 11px;
       padding-left: 5px;
     }

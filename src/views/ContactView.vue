@@ -1,3 +1,32 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import emailjs from '@emailjs/browser'
+import ModalContact from '@/components/Contact/ModalContact.vue'
+
+const form = ref('')
+const inputReset = ref('')
+const name = ref('')
+const sending = ref(false)
+const isOpen = ref(false)
+
+const sendEmail = () => {
+  sending.value = true
+  emailjs.sendForm(
+    'service_150dlvm',
+    'template_s5iha1s',
+    form.value,
+    'n5A7QePYCgc74Qul3'
+  )
+    .then(() => {
+      inputReset.value = ''
+      sending.value = false
+      isOpen.value = true
+      setTimeout(() => name.value = '', 100)
+    })
+}
+
+</script>
+            
 <template>
   <div class="contact-container">
 
@@ -86,35 +115,6 @@
   </modal-contact>
 
 </template>
-
-<script lang="ts" setup>
-import { ref } from 'vue'
-import emailjs from '@emailjs/browser'
-import ModalContact from '@/components/Contact/ModalContact.vue'
-
-const form = ref('')
-const inputReset = ref('')
-const name = ref('')
-const sending = ref(false)
-const isOpen = ref(false)
-
-const sendEmail = () => {
-  sending.value = true
-  emailjs.sendForm(
-    'service_150dlvm',
-    'template_s5iha1s',
-    form.value,
-    'n5A7QePYCgc74Qul3'
-  )
-    .then(() => {
-      inputReset.value = ''
-      sending.value = false
-      isOpen.value = true
-      setTimeout(() => name.value = '', 100)
-    })
-}
-
-</script>
 
 <style lang="scss" scoped>
 @import '@/assets/styles/colors';

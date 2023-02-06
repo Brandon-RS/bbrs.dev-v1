@@ -1,3 +1,11 @@
+<script setup lang="ts">
+
+defineProps<{ name: string }>()
+
+const repos = 'https://github.com/Brandon-RS?tab=repositories'
+
+</script>
+
 <template>
   <div class="home-banner">
     <div class="banner-content">
@@ -14,16 +22,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-
-defineProps<{
-  name: string
-}>()
-
-const repos = 'https://github.com/Brandon-RS?tab=repositories'
-
-</script>
 
 <style lang="scss" scoped>
 .home-banner {

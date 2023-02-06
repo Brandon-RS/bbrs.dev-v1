@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import type { projectType } from '@/types'
+
+defineProps<{ projects: projectType[] }>()
+</script>
+
 <template>
   <div class="projects-container">
     <h2 class="second-title">Projects</h2>
@@ -25,13 +31,6 @@
     </p>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { ProjectType } from '@/types'
-
-defineProps<{ projects: ProjectType[] }>()
-
-</script>
 
 <style lang="scss" scoped>
 .projects-container {
@@ -92,7 +91,8 @@ defineProps<{ projects: ProjectType[] }>()
     a {
       text-decoration: none;
       color: #af0e99;
-      i{
+
+      i {
         font-size: 12px;
       }
     }

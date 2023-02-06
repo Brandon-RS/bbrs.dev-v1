@@ -1,11 +1,11 @@
-export interface SkillType {
+export interface skillType {
   id: string,
   name: string,
   icon: string,
   date: string
 }
 
-export interface ProjectType {
+export interface projectType {
   id: string,
   name: string,
   year: string,

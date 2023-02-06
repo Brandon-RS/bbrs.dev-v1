@@ -1,3 +1,18 @@
+<script lang="ts" setup>
+import { computed } from 'vue'
+import type { skillType } from '@/types'
+
+const props = defineProps<{ skills: skillType[] }>()
+
+const baseImageUrl = 'https://res.cloudinary.com/test-service/image/upload/v1650489246/Avatares/'
+
+const allSkills = computed(() => {
+  return props.skills.map(s => {
+    return { id: s.id, name: s.name, icon: `${baseImageUrl}${s.icon}.png`, date: s.date }
+  })
+})
+</script>
+
 <template>
   <div class="skills-container">
     <h2 class="second-title">Skills</h2>
@@ -16,22 +31,6 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { computed } from 'vue'
-import { SkillType } from '@/types'
-
-const props = defineProps<{ skills: SkillType[] }>()
-
-const baseImageUrl = 'https://res.cloudinary.com/test-service/image/upload/v1650489246/Avatares/'
-
-const allSkills = computed(() => {
-  return props.skills.map(s => {
-    return { id: s.id, name: s.name, icon: `${baseImageUrl}${s.icon}.png`, date: s.date }
-  })
-})
-
-</script>
-
 <style lang="scss" scoped>
 .skills-container {
   .skills-cards {
@@ -42,11 +41,13 @@ const allSkills = computed(() => {
       border-radius: 10px;
       box-shadow: 0px 0px 4px rgb(64, 64, 64);
       padding: 20px 10px 20px 20px;
+
       img {
         width: 48px;
         object-fit: cover;
         margin-right: 10px;
       }
+
       div {
         .from {
           color: rgb(170, 170, 170);
@@ -54,6 +55,7 @@ const allSkills = computed(() => {
           margin-bottom: 10px;
           font-weight: 400;
         }
+
         .name {
           font-weight: 600;
           font-size: 16px;

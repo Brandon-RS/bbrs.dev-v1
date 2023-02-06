@@ -1,21 +1,29 @@
+<script setup lang="ts">
+import { computed, defineAsyncComponent } from 'vue'
+import { useSkillsStore } from '@/stores/skills.store'
+import { useProjectStore } from '@/stores/projects.store'
+
+const HomeBanner = defineAsyncComponent(() => import('@/components/home/BannerHome.vue'))
+const HomeSkills = defineAsyncComponent(() => import('@/components/home/SkillsHome.vue'))
+const HomeProjects = defineAsyncComponent(() => import('@/components/home/ProjectsHome.vue'))
+const HomeContact = defineAsyncComponent(() => import('@/components/home/ContactHome.vue'))
+
+const projectsStore = useProjectStore()
+const skillStore = useSkillsStore()
+
+const projects = computed(() => projectsStore.getAllProjects)
+const skills = computed(() => skillStore.getAllSkills)
+
+</script>
+
 <template>
   <div class="main-home">
     <HomeBanner name="Brandon" />
-    <HomeSkills :skills="skills" />
     <HomeProjects :projects="projects" />
+    <HomeSkills :skills="skills" />
     <HomeContact />
   </div>
 </template>
-
-<script lang="ts" setup>
-
-import HomeBanner from '@/components/home/BannerHome.vue'
-import HomeSkills from '@/components/home/SkillsHome.vue'
-import HomeProjects from '@/components/home/ProjectsHome.vue'
-import HomeContact from '@/components/home/ContactHome.vue'
-import { projects, skills } from '@/components/data/data'
-
-</script>
 
 <style lang="scss" scoped>
 

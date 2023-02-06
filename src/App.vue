@@ -1,9 +1,17 @@
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
+
+const NavbarComponent = defineAsyncComponent(() => import('./components/NavbarComponent.vue'))
+const LogoComponent = defineAsyncComponent(() => import('./components/LogoComponent.vue'))
+const HomeFooter = defineAsyncComponent(() => import('./components/FooterComponent.vue'))
+</script>
+
 <template>
   <div class="main">
     <div class="app-container">
       <div class="header">
         <div class="header-nav">
-          <LogoComponent :icon="icon" :name="name" />
+          <LogoComponent />
           <NavbarComponent />
         </div>
         <span class="theme-button">
@@ -12,22 +20,12 @@
       </div>
 
       <div class="main-container">
-        <router-view />
+        <RouterView />
         <HomeFooter />
       </div>
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import NavbarComponent from './components/NavbarComponent.vue'
-import LogoComponent from './components/LogoComponent.vue'
-import HomeFooter from './components/FooterComponent.vue'
-
-const icon = 'icon-head.png'
-const name = 'Brandon Rojas'
-
-</script>
 
 <style lang="scss">
 @import './assets/styles/index';

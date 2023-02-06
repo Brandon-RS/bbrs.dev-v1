@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const props = defineProps<{ name: string }>()
+
+const userName = props.name ?? ''
+</script>
+
 <template>
   <div
     class="modal-background  fade-in"
@@ -15,12 +21,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-const props = defineProps<{ name: string }>()
-
-const userName = props.name ?? ''
-</script>
 
 <style lang="scss" scoped>
 @import '@/assets/styles/colors';
