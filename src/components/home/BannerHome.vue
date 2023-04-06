@@ -18,7 +18,7 @@ const repos = 'https://github.com/Brandon-RS?tab=repositories'
       </p>
     </div>
     <div class="banner-image">
-      <img src="@/assets/images/icon-all.png" alt="brandon-pic">
+      <img src="@/assets/images/icon-all.webp" alt="brandon-pic">
     </div>
   </div>
 </template>

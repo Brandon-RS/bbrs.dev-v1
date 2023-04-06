@@ -4,11 +4,11 @@ import type { skillType } from '@/types'
 
 const props = defineProps<{ skills: skillType[] }>()
 
-const baseImageUrl = 'https://res.cloudinary.com/test-service/image/upload/v1650489246/Avatares/'
+const baseImageUrl = 'https://res.cloudinary.com/test-service/image/upload/v1680821999/brandon.dev/'
 
 const allSkills = computed(() => {
   return props.skills.map(s => {
-    return { id: s.id, name: s.name, icon: `${baseImageUrl}${s.icon}.png`, date: s.date }
+    return { id: s.id, name: s.name, icon: `${baseImageUrl}${s.icon}.webp`, date: s.date }
   })
 })
 </script>
