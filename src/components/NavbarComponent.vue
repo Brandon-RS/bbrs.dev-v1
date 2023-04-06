@@ -6,7 +6,7 @@
   <div class="navbar-container">
     <nav class="navbar">
       <router-link class="nav-link only-mobile" :to="{ name: 'home' }">
-        <img src="@/assets/images/icon-head.png" alt="home">
+        <img src="@/assets/images/icon-head.webp" alt="home">
       </router-link>
       <router-link class="nav-link" :to="{ name: 'about' }"><span>About</span></router-link>
       <router-link class="nav-link" :to="{ name: 'projects' }"><span>Projects</span></router-link>

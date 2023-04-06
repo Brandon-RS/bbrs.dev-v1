@@ -3,7 +3,7 @@
 
 <template>
   <div class="logo-container">
-    <img src="@/assets/images/icon-head.png" alt="Brandon Rojas">
+    <img src="@/assets/images/icon-head.webp" alt="Brandon Rojas">
     <router-link class="home-link" :to="{ name: 'home' }">
       <span class="logo-title">Brandon Rojas</span>
     </router-link>
